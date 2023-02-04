@@ -9,7 +9,7 @@ typedef vector<int> vi;
 typedef long long ll;
 
 void solve(){
-    
+       
 }
 
 
