@@ -7,6 +7,7 @@ using namespace std;
 #define LOOP(i,n) for(int i=0;i<n;i++)
 typedef vector<int> vi;
 typedef long long ll;
+#define YES cout<<"YES"<<endl 
 
 void solve(){
        

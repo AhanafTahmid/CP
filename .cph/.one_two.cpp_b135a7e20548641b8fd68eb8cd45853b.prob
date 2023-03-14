@@ -1,0 +1,1 @@
+{"name":"Local: one_two","url":"/Volumes/My Files/Programming/1-CP/one_two.cpp","tests":[{"id":1675957057551,"input":"3\n6\n2 2 1 2 1 2\n5\n2 1 2 2 2\n5\n1 1 1 2 2","output":"2\n3\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Volumes/My Files/Programming/1-CP/one_two.cpp","group":"local","local":true}

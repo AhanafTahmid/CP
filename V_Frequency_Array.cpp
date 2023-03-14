@@ -11,9 +11,9 @@ int main(){
     for(i=1;i<=t;i++){
         cin>>ar[i];
     }    
-    for(i=1;i<=t;i++){
+    for(int j=1;j<=t;j++){
         //int tm = ar[i];
-        fr[ar[i]]++;
+        fr[ar[j]]++;
         //cout<<fr[i];
     }
     for(i=1;i<=s;i++){

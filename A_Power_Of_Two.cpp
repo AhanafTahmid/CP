@@ -2,20 +2,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 void solve(){
-    long long int x;
+   long long int x,a1;
    cin>>x;
-   int i=1;
-   while(pow(2,i)<=x){
-        if(pow(2,3)==x){
-            printf("YES");
-            return;
-        }
-        i++;
-   }
-   printf("NO");
-   
-    //cout<< pow(2,3);
-    //for(int i=0;i<)
+   double r = log2(x) / log2(2);
+   if(r-(int)r==0) cout<< "YES";
+   else cout<<"NO";
 }
 
 
