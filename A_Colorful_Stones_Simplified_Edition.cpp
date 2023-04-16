@@ -1,15 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 void solve(){
-    int c=0;
+    int c=0,j=0;
     string a,b;
     cin>>a>>b;
     for(int i=0;i<b.size();i++){
-        if(b[i]=='R' && b[i+1]=='R') c++;
-        if(b[i]=='G' && b[i+1]=='G') c++;
-        if(b[i]=='B' && b[i+1]=='B') c++;
+        if(b[i]==a[j]){
+            j++;
+            c++;
+        }
     }
-    cout<<c<<endl;
+    cout<<c+1<<endl;
 }
 
 

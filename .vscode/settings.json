@@ -28,6 +28,21 @@
         "cmath": "cpp",
         "*.tcc": "cpp",
         "chrono": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "functional": "cpp",
+        "iosfwd": "cpp",
+        "__bit_reference": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "__string": "cpp",
+        "istream": "cpp",
+        "__memory": "cpp",
+        "limits": "cpp",
+        "ratio": "cpp",
+        "scoped_allocator": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "variant": "cpp"
     }
 }

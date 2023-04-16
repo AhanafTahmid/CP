@@ -2,13 +2,15 @@
 using namespace std;
 void solve(){
     string a;
-    int 
+    int ct=0;
     cin>>a;
-    for(int i=0;i<n;i++){
-        for(int j=i;j<n;j++){
-            if(a[j]==a[i]) sm++;
-        }
+
+    set<char>s;
+    for(int i=0;i<a.size();i++){
+        s.insert(a[i]);
     }
+    if((s.size()-ct)%2==0) cout<<"CHAT WITH HER!"<<endl;
+    else cout<<"IGNORE HIM!"<<endl;
 }
 
 

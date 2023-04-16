@@ -4,12 +4,14 @@ void solve(){
     int a,b,c,d,s=0;
     string ar;
     cin>>a>>b>>c>>d;
+
     cin>>ar;
-    for(int i=1;i<=ar.size();i++){
-        if(ar[i]==('0'+a))  s+=a;
-        else if(ar[i]==('0'+b)) s+=b;
-        else if(ar[i]==('0'+c)) s+=c;
-        else if(ar[i]==('0'+d)) s+=d;
+    for(int i=0;i<ar.size();i++){
+        if(ar[i]=='1')      s+=a;
+        else if(ar[i]=='2') s+=b;
+        else if(ar[i]=='3') s+=c;
+        else if(ar[i]=='4') s+=d;
+        //cout<<s<<endl;
 
     }   
     cout<<s<<endl;

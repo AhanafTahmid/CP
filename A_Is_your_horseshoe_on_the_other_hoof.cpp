@@ -1,16 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 void solve(){
-    int a[1000000000];
-    int j=0;
-    for(int i=0;i<a.size();i++){
-        cin>>a[i];
+    int a,b,c,d,s=0;
+    cin>>a>>b>>c>>d;
+    int ar[100]={a,b,c,d};
+    for(int i=0;i<4;i++){
+        for(int j=i+1;j<4;j++){
+            if(ar[i]==ar[j] && ar[j]!=-1){
+                s++;
+                ar[j]=-1;
+            }
+        }
     }
-    for(int i=0;i<a.size();i++){
-        j++;
-        while(j>=2){}
-        if(a[i]==)
-    }
+    
+    cout<<s<<endl;
+
 
 }
 

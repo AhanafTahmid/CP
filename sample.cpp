@@ -9,6 +9,11 @@ typedef vector<int> vi;
 typedef long long ll;
 #define YES cout<<"YES"<<endl 
 
+bool comp(const pair<int,int> &a,  const pair<int,int> &b){
+    return a.second > b.second; 
+}
+
+
 void solve(){
        
 }
