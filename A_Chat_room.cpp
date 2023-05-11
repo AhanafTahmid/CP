@@ -3,17 +3,16 @@ using namespace std;
 void solve(){
     string s;
     cin>>s;
-    int i,j;
     int l = s.size();
-    int c=0;
-    string s2 = "hello";
-    for(i=0,j=0;i<l;i++){
-        if(s[i]==s2[j]){
+    string s1 = "hello";
+    int c = 0;
+    for(int i=0,j=0;i<l;i++){
+        if(s[i]==s1[j]){
             j++;
             c++;
         }
-    } 
-    if(j==5) cout<<"YES"<<endl;
+    }
+    if(c==5) cout<<"YES"<<endl;
     else cout<<"NO"<<endl;
 }
 
