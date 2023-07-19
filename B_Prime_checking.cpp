@@ -3,6 +3,10 @@ using namespace std;
 void solve(){
     long long int n,i;
     cin>>n;
+    if(n==1){
+        cout<<"NO"<<endl;
+        return;
+    }
     for(i=2;i*i<=n;i++){
         if(n%i==0){
             cout <<"NO"<<endl;
