@@ -1,61 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 void solve(){
-    int n,c=0,r=0;
+    int n;
     cin>>n;
-    vector<int> ar(n+2);
+    int ar[104000]={11};
+    int c = 0;
+    int p = 0;
+    int ct  = 0;
+    for(int i=0;i<n;i++)cin>>ar[i];
     for(int i=0;i<n;i++){
-        cin>>ar[i];
-        ar.push_back(ar[i]);
-    }
-    int j=0;
-    for(int i=0;i<n;i++){
-        if(ar[i]>0){
-            j = i;
-            break;
-        }
-        else if(ar[i]==-1) c++; 
-    }
-    
-    int last_index=n;
-    for(int i=j;i<n;i++){
-        if(ar[i]>0) {
-            //r+=ar[i];
-            //cout<<ar[i]<<endl;
-        }
-        else{
-            last_index = i;
-            //cout<<ar[i]<<endl;
-            //cout<<"ll"<<r<<endl;
-        }
-    }
+       if(ar[i]==-1) c++;
+       else if(ar[i]!=-1) p+=ar[i];
+
+       if(c>0){
+            p--;
+            c--;
+            if(p<0){
+                ct++;
+                p=0;
+            }
+       }
 
 
-    for(int i=j;i<last_index;i++){
-        if(ar[i]>0) {
-            r+=ar[i];
-            //cout<<ar[i]<<endl;
-        }
-        else{
-            r--;
-            //last_index = i;
-            //cout<<ar[i]<<endl;
-            //cout<<"ll"<<r<<endl;
-        }
     }
-
-    if(r<0){
-        r = -r;
-    }
-    else{
-        //cout<<"ddddd"<<endl;
-        r = 0;
-    }
-
-    cout<<c+r<<endl;
-    
-
-
+    cout<<ct<<endl;
 }
 
 

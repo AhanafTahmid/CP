@@ -3,27 +3,25 @@ using namespace std;
 void solve(){
     int n;
     cin>>n;
-    int c = 0;
-    int a[1000], b[1000];
+    vector<int> ar(n);
     for(int i=0;i<n;i++){
-        cin>>a[i]>>b[i];
+        cin>>ar[i];
     }
+    sort(ar.begin(),ar.end());
+    ar[0] = ar[0]+1;
+    long long p = 1;
     for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(a[i]==b[j]){
-                c++;
-            }
-        }
+        p*=ar[i];
     }
-    cout<<c<<endl;
-    
+    cout<<p<<endl;
+
 }
 
 
 int main(){
 
     int t=1;
-    //cin >> t;
+    cin >> t;
     while(t--)solve(); 
     return 0;
 }

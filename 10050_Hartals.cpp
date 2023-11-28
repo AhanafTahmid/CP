@@ -13,7 +13,7 @@ int main() {
 		}
 		int count = 0;
 		for(i = 1; i <= N; i++)
-			if(DD[i] == 1 && i%7 != 0 && i%7 != 6)
+			if(DD[i] == 1 && i% 7 != 0 && i%7 != 6)
 				count++;
 		printf("%d\n", count);
 	}
