@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void bigmod(){
+
+//Big Mod ADDITION
+void biginteger(){
     string s1 = "111111999199";
     string s2 = "123993334";
   
@@ -44,21 +46,22 @@ int main(){
 
     int t=1;
     //cin >> t;
-    while(t--)bigmod(); 
+    while(t--)biginteger(); 
     return 0;
 }
 
 
 //################################################################
 
-//Another WAY
+//Another WAY Big Mod ADDITION, JAMIL SIR METHOD
+
 
 
 //single digit jog kore kore jawa
 #include <bits/stdc++.h>
 using namespace std;
 
-void bigmod(){
+void biginteger(){
     string s1="999199";
     string s2 = "123993334";//999199+123993334=124992533
 
@@ -99,6 +102,6 @@ int main(){
 
     int t=1;
     //cin >> t;
-    while(t--)bigmod(); 
+    while(t--)biginteger(); 
     return 0;
 }
