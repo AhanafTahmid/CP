@@ -30,7 +30,7 @@ int main(){
 }
 
 //*2nd Snippet/
-//
+//shortcut -> xxxxxx
 #include <bits/stdc++.h>
 using namespace std;
 void solve(){
@@ -45,4 +45,29 @@ int main(){
     while(t--)solve(); 
     return 0;
 }
+
+
 //*3rd Snippet/
+//with debugging
+#include <bits/stdc++.h>
+using namespace std;
+#define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+void dbg_out(){cerr<<endl;}
+template <typename Head, typename... Tail>
+void dbg_out(Head H,Tail... T){cerr<<' '<<H; dbg_out(T...); }
+#define dbg(...) cerr<<"("<<#__VA_ARGS__<<"):",dbg_out(__VA_ARGS__);
+
+#include <bits/stdc++.h>
+using namespace std;
+void solve(){
+    
+}
+
+
+int main(){
+
+    int t=1;
+    cin >> t;
+    while(t--)solve(); 
+    return 0;
+}

@@ -1,35 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 void solve(){
-    int n,qq,q[100000],ar[100000];
-    cin>>n>>qq;
+    int n,q;
+    cin>>n>>q;
+    int ar[100100];
     for(int i=0;i<n;i++){
         cin>>ar[i];
     }
-    int f;
-    for(int j=0;j<qq;j++){
-        cin>>q[j];
-        int l = 0;
-        int r = n-1;
-        while(l<=r){
-            f = 0;
-            int mid = (l+r)/2;
-            if(ar[mid]==q[j]){
-                f = 1;
-                break;
+    int x;
+    for(int i=0;i<q;i++){
+        cin>>x;
+        int l = -1;//a[l] < x
+        int r = n;//a[r] >= x
+        while(l+1<r){
+            int m = (l+r)/2;
+            if(ar[m]<x){
+                l = m;
             }
-            else if(ar[mid]<q[j]){
-                l = mid+1;
-            }
-            else if(ar[mid]>q[j]){
-                r = mid-1;
+            else{
+                r = m;
             }
         }
-        if(f) cout<<"YES"<<endl;
+        if(ar[r]==x)cout<<"YES"<<endl;
         else cout<<"NO"<<endl;
     }
 
-    
 }
 
 

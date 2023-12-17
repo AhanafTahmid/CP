@@ -3,19 +3,18 @@ using namespace std;
 void solve(){
     int n,q;
     cin>>n>>q;
-    //int ar[1000000];
     vector<int> ar(n);
-    int que[1000000];
+    int x;
     for(int i=0;i<n;i++){
         cin>>ar[i];
     }
-    for(int i=0;i<n;i++){
-        cin>>que[i];
+    for(int i=0;i<q;i++){
+        cin>>x;
         int l = -1;
         int r = n;
         while(l+1<r){
             int mid = (l+r)/2;
-            if(ar[mid]<=que[i]){
+            if(ar[mid]<=x){
                 l = mid;
             }
             else{
