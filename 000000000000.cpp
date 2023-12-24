@@ -1,22 +1,29 @@
-// C++ program to demonstrate 
-// logical operator keywords 
-#include<iostream> 
+#include <bits/stdc++.h>
 using namespace std; 
 
-//add the nodes in an array
-vector<int> g[100];
+//for 3 variables -> 3! permutations, for 4 variables -> 4! permutations, 
+int main()
+{
+	int arr[] = { 1, 2, 4, 3 };
+	int n = 4;
 
-void bfs(){
-	
+	do {
+		cout << arr[0] << " " << arr[1] << " " << arr[2] <<" " <<arr[3] << "\n";
+	} while (next_permutation(arr, arr + n));
+
+
+	cout<<endl;
+	cout<<endl;
+
+
+	string s = "ABC";
+
+	do {
+		cout<<s<<endl;
+	} while (next_permutation(s.begin(), s.end()));
+
+
+
+	return 0;
 }
-int main() 
-{ 
-	int n,e;
-	cin>>n>>e;
-	for(int i=1;i<=e;i++){
-		int v1,v2;
-		cin>>v1>>v2;
-		
-	}
-	return 0; 
-} 
+

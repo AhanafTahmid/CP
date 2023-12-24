@@ -1,32 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 void solve(){
+    // int n;
+    // cin>>n;
+    // set<int> ar;
+    // int x; 
+    // for(int i=0;i<n;i++){
+    //     cin>>x;
+    //     //ar.push_back(x);
+    //     ar.insert(x);
+    // }
+    // sort(ar,ar+n);
+    // int c1 = 0;
+    // for(int i=0;i<n-1;i++){
+    //     if(ar[i]<ar[i+1]){
+    //         c1++;
+    //     }
+    // }
+
+    // int c2 = 0;
+    // sort(ar,ar+n,greater<int>());
+    // for(int i=0;i<n-1;i++){
+    //     if(ar[i]>ar[i+1]){
+    //         c2+;
+    //     }
+    // }
+    
+    // cout<<ar.size()-2<<endl;
+
+
+
+
     int n;
     cin>>n;
-    set<int> ar;
-    int x; 
+    map<int,int> mp;
     for(int i=0;i<n;i++){
+        int x;
         cin>>x;
-        //ar.push_back(x);
-        ar.insert(x);
+        mp[x]++;
     }
-    sort(ar,ar+n);
-    int c1 = 0;
-    for(int i=0;i<n-1;i++){
-        if(ar[i]<ar[i+1]){
-            c1++;
-        }
+    int ct  = 0;
+    for(auto x:mp){
+        if(x.second==1)ct++;
     }
-
-    int c2 = 0;
-    sort(ar,ar+n,greater<int>());
-    for(int i=0;i<n-1;i++){
-        if(ar[i]>ar[i+1]){
-            c2+;
-        }
-    }
-    
-    cout<<ar.size()-2<<endl;
+    cout<<ct-2<<endl;
 
 }
 
