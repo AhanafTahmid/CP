@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
+        "ostream": "cpp",
         "__bit_reference": "cpp",
         "__hash_table": "cpp",
         "__split_buffer": "cpp",
@@ -23,13 +24,9 @@
         "vector": "cpp",
         "ranges": "cpp",
         "stacktrace": "cpp",
-        "bitset": "cpp",
-        "queue": "cpp",
         "random": "cpp",
-        "stack": "cpp",
-        "ostream": "cpp",
+        "numeric": "cpp",
         "functional": "cpp",
-        "*.tcc": "cpp",
-        "iosfwd": "cpp"
+        "*.tcc": "cpp"
     }
 }
