@@ -5,19 +5,30 @@ using namespace std;
 
 void solve(){
     int n;cin>>n;
-    int k;cin>>k;
+    int target;cin>>target;
+    map<int, int> mp;
     vector<int> a(n);
-    for(int &i: a)cin>>i;
-    sort(a.begin(),a.end(),greater<int>());
     for(int i=0;i<n;i++){
-        val = 
+        int x;cin>>x;
+        mp[x] = 1;//if x itself is 0 then it will not work, that's why put 1 here
+        a[i] = x;
     }
+
+    for(int i=0;i<n;i++){
+        //cout<< a[i] <<" = "<<mp[a[i]+target]<<endl;
+        if(mp[a[i]+target]!=0){
+            cout<<"YES"<<endl;
+            return;
+        }
+    }
+    cout<<"NO"<<endl;
 }
 
 
-signed main(){
+int32_t main(){
+    ios::sync_with_stdio(false);cin.tie(nullptr);
     int t=1;
-    //cin >> t;
+    cin >> t;
     while(t--)solve(); 
     return 0;
 }

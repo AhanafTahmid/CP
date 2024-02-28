@@ -23,6 +23,21 @@
         "chrono": "cpp",
         "complex": "cpp",
         "valarray": "cpp",
-        "compare": "cpp"
+        "compare": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__string": "cpp",
+        "string_view": "cpp",
+        "numeric": "cpp",
+        "array": "cpp",
+        "forward_list": "cpp",
+        "initializer_list": "cpp",
+        "ranges": "cpp",
+        "stacktrace": "cpp",
+        "barrier": "cpp",
+        "latch": "cpp",
+        "limits": "cpp",
+        "semaphore": "cpp",
+        "algorithm": "cpp"
     }
 }
