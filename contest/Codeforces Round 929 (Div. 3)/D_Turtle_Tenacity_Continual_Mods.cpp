@@ -7,17 +7,21 @@ void solve(){
     int n;cin>>n;
     vector<int>a(n);
     for(int &i:a)cin>>i;
-    int ans = 0;
-    int tmp = 1;
-    for(int i=0;i<n;i++){
-        tmp%=a[i];
-        cout<< tmp <<endl;
+    sort(a.begin(),a.end());
+    if(a[0]!=a[1])cout<<"YES"<<endl;
+    else{
+        int ans = 0;
+        for(int i=n-1;i>=1;i--){
+            ans+= (a[i]%a[0] > 0);
+        }
+        if(ans)cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
     }
 }
 
 int32_t main(){
     int t=1;
-    //cin >> t;
+    cin >> t;
     while(t--)solve(); 
     return 0;
 }

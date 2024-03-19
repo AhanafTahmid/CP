@@ -1,0 +1,30 @@
+{
+    "files.associations": {
+        "random": "cpp",
+        "iostream": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "functional": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "*.tcc": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp",
+        "atomic": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "ios": "cpp",
+        "system_error": "cpp",
+        "any": "cpp",
+        "climits": "cpp",
+        "array": "cpp",
+        "queue": "cpp",
+        "span": "cpp",
+        "string_view": "cpp"
+    }
+}

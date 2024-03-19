@@ -1,5 +1,7 @@
 /*
 
+TC - 1
+------
 4 3
 1 3
 1 2
@@ -7,7 +9,26 @@
 
 output: -1
 
-You have to find immediate greater(if exists) of that given index.
+TC - 2
+------
+4 3
+1 3
+1 2
+2 3
+
+output: 3
+
+TC - 3
+------
+4 3
+1 3
+1 2
+2 1
+
+output: 2
+
+
+You have to find immediate greater(if exists) of that given index in type 2.
 Also you must use scanf or cin with fastio to take input, otherwise it will give tle
 
 */
