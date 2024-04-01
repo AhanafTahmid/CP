@@ -5,16 +5,13 @@ using namespace std;
 
 void solve(){
     int n,k;cin>>n>>k;
-    if(n%3==0){
-        printf("%lld %lld %lld\n",n/3,n/3,n/3);
+    if(n==k){
+        for(int i=1;i<=n;i++) cout<<1<<" \n"[i==n];
     }
-    else if(n&1){
-        printf("%lld %lld %lld\n",1LL,n/2,n-n/2-1);
+    else if(n>k && k==1){
+        for(int i=1;i<=n;i++) cout<<i<<" \n"[i==n];
     }
-    else{
-        if(n%4==0)printf("%lld %lld %lld\n",n/4,n/4,n/2);
-        else printf("%lld %lld %lld\n",2LL,(n-2)/2,(n-2)/2);
-    }
+    else cout<< -1 <<endl;
 }
 
 int32_t main(){
