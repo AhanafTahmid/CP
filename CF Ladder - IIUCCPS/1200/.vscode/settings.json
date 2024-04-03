@@ -37,6 +37,12 @@
         "limits": "cpp",
         "algorithm": "cpp",
         "__node_handle": "cpp",
-        "any": "cpp"
+        "any": "cpp",
+        "compare": "cpp",
+        "__bit_reference": "cpp",
+        "barrier": "cpp",
+        "latch": "cpp",
+        "semaphore": "cpp",
+        "climits": "cpp"
     }
 }
