@@ -1,30 +1,43 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <functional>
-#include <numeric>
+#include <bits/stdc++.h>
 using namespace std;
-constexpr int INF = 1e8;
-int main() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    int t = 1;
-    while (t--) {
-        int n;
-        std::cin >> n;
-        std::vector<int> a(n);
-        for (int i = 0; i < n; ++i)
-            std::cin >> a[i];
-        std::pair<int, long long> neg, pos;
-        for (int i = 0; i < n; ++i) {
-            if (a[i] < 0) {
-                neg = std::max(neg, std::make_pair(pos.first + 1, pos.second + a[i]));
-                cout<< pos.first + 1 << ' ' << pos.second + a[i] <<endl;
-            } else {
-                //pos = std::max(pos, std::make_pair(neg.first + 1, neg.second + a[i]));
-            }
+#define endl '\n'
+#define int long long
+
+void solve(){
+    int n;cin>>n;
+    vector<int> a(n);
+    for(int &i: a) cin>>i;
+    int mx = LLONG_MIN;
+    vector<int> ans;
+    //get positive values
+    for(int i=0;i<n;i++){
+        if(a[i]<0){
+            if(mx!=LLONG_MIN)ans.push_back(mx);
+            mx = LLONG_MIN;
         }
-        std::cout << std::max(neg, pos).second << "\n";
+        else mx = max(mx, a[i]);
     }
+    if(mx!=LLONG_MIN)ans.push_back(mx);
+    
+    //get negative values
+    mx = LLONG_MIN;
+    for(int i=0;i<n;i++){
+        if(a[i]>0){
+            if(mx!=LLONG_MIN)ans.push_back(mx);
+            mx = LLONG_MIN;
+        }
+        else mx = max(mx , a[i]);
+        
+    }
+    if(mx!=LLONG_MIN)ans.push_back(mx);
+
+    cout<< accumulate(ans.begin(),ans.end(),0LL) <<endl;
+}
+
+int32_t main(){
+    ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    int t=1;
+    cin >> t;
+    while(t--)solve(); 
     return 0;
 }

@@ -5,13 +5,15 @@ using namespace std;
 
 void solve(){
     int n, l;cin>>n>>l;
-    vector<int> a;
-    int prev = 0;
-    for(int &i: a)cin>>a;
+    vector<int> a(n);
+    for(int &i: a)cin>>i;
     sort(a.begin(),a.end());
-    for(int i=0;i<n;i++){
-        
+    int ans = max(a.front(), l - a.back()), prev = a.front();
+    for(int i=1;i<n;i++){
+        ans = max(ans, (a[i] - prev)/2);
+        prev = a[i];
     }
+    cout<< fixed << setprecision(10) << ans <<endl;
 }
 
 int32_t main(){
