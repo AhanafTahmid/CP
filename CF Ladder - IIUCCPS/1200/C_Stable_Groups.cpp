@@ -20,7 +20,6 @@ void solve(){
         b.pop_back();
     }
     cout<< ans <<endl;
-
 }   
 
 int32_t main(){
