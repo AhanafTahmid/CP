@@ -6,19 +6,21 @@ using namespace std;
 void solve(){
     int n;cin>>n;
     map<int, int> mp;
-    int ans = 0;
-    for(int i=1;i<=n;i++){
+    for(int i=0;i<n;i++){
         int x;cin>>x;
-        mp[32 - __builtin_clz(x)]++;
+        mp[x]++;
     }
-    for(auto [x,y]: mp) if(y>=2) ans += (y * (y-1)) / 2;
-    cout<< ans <<endl;
+
+    int ans = (mp[0] * (mp[0] - 1 )) / 2;
+    for(int i=1;i<=10;i++) ans +=  (mp[i] * mp[-i]);
+
+    cout << ans <<endl;
 }
 
 int32_t main(){
     ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     int t=1;
-    cin >> t;
+    //cin >> t;
     while(t--)solve(); 
     return 0;
 }

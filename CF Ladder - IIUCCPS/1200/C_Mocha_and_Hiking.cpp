@@ -5,14 +5,9 @@ using namespace std;
 
 void solve(){
     int n;cin>>n;
-    map<int, int> mp;
-    int ans = 0;
-    for(int i=1;i<=n;i++){
-        int x;cin>>x;
-        mp[32 - __builtin_clz(x)]++;
-    }
-    for(auto [x,y]: mp) if(y>=2) ans += (y * (y-1)) / 2;
-    cout<< ans <<endl;
+    vector<int> a(n);
+    for(int &i: a)cin>>i;
+    for(int i=1;i<=n+1;i++)cout<< i << " \n"[i==n+1];
 }
 
 int32_t main(){

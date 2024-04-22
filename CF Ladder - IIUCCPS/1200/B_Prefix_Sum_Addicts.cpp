@@ -7,19 +7,15 @@ void solve(){
     int n,k;cin>>n>>k;
     vector<int> a(k);
     for(int &i: a)cin>>i;
-    vector<int> b {a.front()};
-    int ex = n - k;
-    for(int i=0;i<ex;i++){
-        b.push_back(0);
-    }
+
+    vector<int> b;
+    b.push_back(a.front());
     for(int i=0;i<k-1;i++){
         b.push_back(a[i+1]-a[i]);
     }
-
-    if( b.size()!=n || !is_sorted(b.begin(),b.end()) ) cout<< "No" <<endl;
-    else cout<< "Yes"<<endl;
-
-    for(auto x: b)cout<< x <<' ';
+    for(auto x : b)cout<< x << ' ';
+    if(is_sorted(b.begin(),b.end()) ) cout<< "Yes" <<endl;
+    else cout<< "No"<<endl;
 }
 
 int32_t main(){

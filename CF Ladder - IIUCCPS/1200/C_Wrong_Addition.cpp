@@ -4,45 +4,59 @@ using namespace std;
 #define int long long
 
 void solve(){
-    vector<int> a,b,c,d;
+    vector<int> a, c;
     string s1,s2;cin>>s1>>s2;
-    int n1 = s1.size(), n2 = s2.size(), sz = 0;
-    for(int i=0;i<n1;i++)a.push_back(s1[i]-'0');
-    for(int i=0;i<n2;i++)b.push_back(s2[i]-'0');
+    int n1 = s1.size(), n2 = s2.size();
 
-    for(int i=n2-1, j = n1-1;i>=0;j--){
-        if(j<0) c.push_back(b[i]), i--;
-        else if(b[i] >= a[j] && i!=1){
-            c.push_back(b[i]-a[j]);
+    string tmp = "", tmp2 = "";
+    int v = 0, l = 0;
+    for(int i=n2-1, j = n1-1;i>=0;){
+        tmp+=s2[i];
+        reverse(tmp.begin(),tmp.end());
+        v = stoll(tmp);
+        if( v >= (s1[j] - '0') && j>=0){
+            a.push_back(v - (s1[j] - '0'));
+            j--;
+            l = j;
             i--;
-            sz++;
+            tmp = "";
         }
-        else if(i-1>=0){
-            c.push_back((b[i-1]*10 + b[i]) - a[j]);
-            i-=2;
-            sz+=2;
-        }
+        else i--;
     }
 
-    string e="";
-    for(int i=0;i<c.size();i++)e+=to_string(c[i]);
+    if(tmp.size()>=1)a.push_back( v );
+    tmp = "";
+    if(l>=0){
+        for(int i=0;i<=l;i++) tmp+=s1[i];
+        v = stoll(tmp);
+    }
+    if(tmp.size()>=1)a.push_back( v );
+    reverse(a.begin(),a.end());
+
     
-    if(e.size()>s1.size())swap(e,s1);
-    for(int i=e.size();i<s1.size();i++)e+="0";
-    reverse(e.begin(),e.end());
+    string b="";
+    for(int i=0;i<a.size();i++)b+=to_string(a[i]);
+
+    deque<char> aa, bb;
+    for(int i=0;i<s1.size();i++)aa.push_back(s1[i]);
+    for(int i=0;i<b.size();i++)bb.push_back(b[i]);
+
+
+    if(bb.size()>aa.size())swap(bb,aa);
+    for(int i=bb.size();i<aa.size();i++) bb.push_front('0');
+
 
     //verify
-    for(int i=0;i<s1.size();i++) d.push_back((s1[i]-'0')+(e[i]-'0'));
+    for(int i=0;i<aa.size();i++) c.push_back((aa[i] - '0')+(bb[i] - '0'));
     
-    s1 = "";
-    for(auto x: d)s1+=to_string(x);
-
-    reverse(c.begin(),c.end());
+    string f = "";
+    for(int i=0;i<c.size();i++)f+=to_string(c[i]);
+    string g = "";
     int k = 0;
-    while(c[k]==0)k++;
-    if((s1==s2)) for(int i=k;i<c.size();i++) cout<< c[i];
-    else cout<< -1;
-    cout<<endl;
+    while(f[k]=='0')k++;
+    for(int i=k;i<f.size();i++)g+=f[i];
+    if(g!=s2)cout<< -1 <<endl;
+    else cout<< stoull(b) <<endl;
 }
 
 int32_t main(){

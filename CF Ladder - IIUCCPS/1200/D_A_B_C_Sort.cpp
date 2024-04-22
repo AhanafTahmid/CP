@@ -5,14 +5,13 @@ using namespace std;
 
 void solve(){
     int n;cin>>n;
-    map<int, int> mp;
-    int ans = 0;
-    for(int i=1;i<=n;i++){
-        int x;cin>>x;
-        mp[32 - __builtin_clz(x)]++;
+    vector<int>a(n);
+    for(int &i: a)cin>>i;
+    for(int i=(n&1);i<n-1;i++){
+        if(a[i]>=a[i+1])swap(a[i],a[i+1]);
     }
-    for(auto [x,y]: mp) if(y>=2) ans += (y * (y-1)) / 2;
-    cout<< ans <<endl;
+    if( is_sorted(a.begin(),a.end()) ) cout<< "YES" <<endl;
+    else cout<< "NO" <<endl;
 }
 
 int32_t main(){
