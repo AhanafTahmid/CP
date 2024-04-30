@@ -13,6 +13,7 @@
         "__tree": "cpp",
         "string": "cpp",
         "string_view": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "random": "cpp"
     }
 }
