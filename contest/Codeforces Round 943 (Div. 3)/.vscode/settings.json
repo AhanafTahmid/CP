@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "barrier": "cpp",
+        "chrono": "cpp",
+        "latch": "cpp",
+        "limits": "cpp",
+        "random": "cpp",
+        "semaphore": "cpp",
+        "valarray": "cpp",
+        "algorithm": "cpp",
+        "numeric": "cpp",
+        "iostream": "cpp",
+        "compare": "cpp",
+        "__locale": "cpp",
+        "vector": "cpp",
+        "iosfwd": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp"
+    }
+}
