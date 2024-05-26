@@ -14,6 +14,27 @@
         "string": "cpp",
         "string_view": "cpp",
         "*.tcc": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "deque": "cpp",
+        "functional": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "iosfwd": "cpp",
+        "regex": "cpp",
+        "span": "cpp",
+        "__split_buffer": "cpp",
+        "array": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "initializer_list": "cpp",
+        "ios": "cpp",
+        "valarray": "cpp",
+        "ranges": "cpp",
+        "stacktrace": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "tuple": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     }
 }
