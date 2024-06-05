@@ -2,7 +2,7 @@
 using namespace std;
 #define endl '\n'
 #define int long long
-#define trav(v) for(auto x:v) cout<< x << ' '
+
 
 void solve(){
     

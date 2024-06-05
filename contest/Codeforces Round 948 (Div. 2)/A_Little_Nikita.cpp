@@ -2,16 +2,21 @@
 using namespace std;
 #define endl '\n'
 #define int long long
-#define trav(v) for(auto x:v) cout<< x << ' '
 
 void solve(){
-    
+    int n,m;cin>>n>>m;
+    if(n<m)cout<<"No"<<endl;
+    else{
+        int v = (n - m)%2;
+        if(v)cout<<"No"<<endl;
+        else cout<<"Yes"<<endl;
+    }
 }
 
 int32_t main(){
     ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     int t=1;
-    //cin >> t;
+    cin >> t;
     while(t--)solve(); 
     return 0;
 }
