@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "random": "cpp",
+        "iostream": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "iosfwd": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "filesystem": "cpp",
+        "valarray": "cpp"
+    }
+}
