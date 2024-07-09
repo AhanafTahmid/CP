@@ -6,92 +6,89 @@ using namespace std;
 void solve(){
     int n;cin>>n;
     vector<int>a(n),b(n),c(n);
-    vector<pair<int, array<int, 2>>> ans;
-    bool ok1 = 0, ok2 = 0, ok3 = 0;
     int val = 0;
     for(int &i: a)cin>>i,val+=i;
     for(int &i: b)cin>>i;
     for(int &i: c)cin>>i;
 
+    val = (val+2) / 3;
     int asum = 0, bsum = 0, csum = 0;
-    val = ceil((val*1.0) / 3);
-    //cout<< val <<endl;
-    int ct = 1;
-    for(int i=0;i<n;i++){
-
-        if(!ok1 && !ok2 && !ok3){
-            asum+=a[i];
-            bsum+=b[i];
-            csum+=c[i];
-        }
-
-        if(!ok1 && !ok2 && ok3){
-            asum+=a[i];
-            bsum+=b[i];
-        }
-        else if(!ok1 && ok2 && !ok3){
-            asum+=a[i];
-            csum+=c[i];
-        }
-        else if(ok1 && !ok2 && !ok3){
-            bsum+=b[i];
-            csum+=c[i];
-        }
-
-
-        else if(ok1 && ok2 && !ok3){
-            csum+=c[i];
-        }
-        else if(ok1 && !ok2 && ok3){
-            bsum+=b[i];
-        }
-        else if(!ok1 && ok2 && ok3){
-            asum+=a[i];
-        }
-        else if(ok1 && ok2 && ok3){
-            break;
-        }
-
-        cout<< asum << ' ' << bsum << ' ' << csum <<endl;
-        vector<int>tmp={asum, bsum, csum};
-        sort(tmp.begin(),tmp.end());
-        int lw = upper_bound(tmp.begin(),tmp.end(), val) - tmp.begin();
-        
-        if(lw==2){
-            if(tmp[lw] == asum) ok1 = true, ans.push_back( {1, {ct, i+1}}); 
-            else if(tmp[lw] == bsum) ok2 = true, ans.push_back({2, {ct, i+1}}); 
-            else if(tmp[lw] == csum) ok3 = true, ans.push_back({3, {ct, i+1}}); 
-            asum = 0, bsum = 0, csum = 0;
-            ct = i + 2;
-        }
-        else if(lw==1){
-            //ab, bc ,ac , remove optimal
-            
-            if(tmp[lw] == asum && tmp[lw-1] == bsum){
-                ok1 = true, ans.push_back( {1, {ct, i+1}}); 
+    auto get = [&](vector<int>a,vector<int>b, vector<int>c){
+        vector< array<int, 2> >ans;
+        int s = 0, st = 1;
+        for(int i=0;i<n;i++){
+            s+=a[i];
+            if(s>=val){
+                ans.push_back({st,i+1});
+                st = i + 1;
+                break;
             }
-            else if(tmp[lw] == bsum) ok2 = true, ans.push_back({2, {ct, i+1}}); 
-            else if(tmp[lw] == csum) ok3 = true, ans.push_back({3, {ct, i+1}}); 
-            asum = 0, bsum = 0, csum = 0;
-            ct = i + 2;
         }
-        if(lw==0){
-            if(tmp[lw] == asum) ok1 = true, ans.push_back( {1, {ct, i+1}}); 
-            else if(tmp[lw] == bsum) ok2 = true, ans.push_back({2, {ct, i+1}}); 
-            else if(tmp[lw] == csum) ok3 = true, ans.push_back({3, {ct, i+1}}); 
-            asum = 0, bsum = 0, csum = 0;
-            ct = i + 2;
+        s = 0;
+        for(int i=st;i<n;i++){
+            s+=b[i];
+            if(s>=val){
+                ans.push_back({st+1,i+1});
+                st = i+1;
+                break;
+            }
         }
+        s = 0;
+        for(int i=st;i<n;i++){
+            s+=c[i];
+            if(s>=val){
+                ans.push_back({st+1,n});
+                break;
+            }
+        }
+        return ans;
+    };
+
+    //6 combinations
+    if(get(a,b,c).size() == 3){
+        vector<array<int, 2>>p = get(a,b,c);
+        int a0 = p[0][0], a1 = p[0][1];
+        int b0 = p[1][0], b1 = p[1][1];
+        int c0 = p[2][0], c1 = p[2][1];
+        cout<<a0<<' '<<a1<<' '<<b0<<' '<<b1<<' '<<c0<<' '<<c1<<endl;
     }
-
-    // if(ans.size()<=2){
-    //     cout<< -1 <<endl;
-    //     return;
-    // }
-    sort(ans.begin(),ans.end());
-    for(auto [x,y]: ans)cout<< y[0] << ' '<< y[1] <<' ';
-    cout<<endl;
-
+    else if(get(a,c,b).size() == 3){
+        vector<array<int, 2>>p = get(a,c,b);
+        int a0 = p[0][0], a1 = p[0][1];
+        int b0 = p[2][0], b1 = p[2][1];
+        int c0 = p[1][0], c1 = p[1][1];
+        cout<<a0<<' '<<a1<<' '<<b0<<' '<<b1<<' '<<c0<<' '<<c1<<endl;
+        
+    }
+    else if(get(b,a,c).size() == 3){
+        vector<array<int, 2>>p = get(b,a,c);
+        int a0 = p[1][0], a1 = p[1][1];
+        int b0 = p[0][0], b1 = p[0][1];
+        int c0 = p[2][0], c1 = p[2][1];
+        cout<<a0<<' '<<a1<<' '<<b0<<' '<<b1<<' '<<c0<<' '<<c1<<endl;
+    }
+    else if(get(b,c,a).size() == 3){
+        vector<array<int, 2>>p = get(b,c,a);
+        int a0 = p[2][0], a1 = p[2][1];
+        int b0 = p[0][0], b1 = p[0][1];
+        int c0 = p[1][0], c1 = p[1][1];
+        cout<<a0<<' '<<a1<<' '<<b0<<' '<<b1<<' '<<c0<<' '<<c1<<endl;
+    }
+    else if(get(c,a,b).size() == 3){
+        vector<array<int, 2>>p = get(c,a,b);
+        int a0 = p[1][0], a1 = p[1][1];
+        int b0 = p[2][0], b1 = p[2][1];
+        int c0 = p[0][0], c1 = p[0][1];
+        cout<<a0<<' '<<a1<<' '<<b0<<' '<<b1<<' '<<c0<<' '<<c1<<endl;
+    }
+    else if(get(c,b,a).size() == 3){
+        vector<array<int, 2>>p = get(c,b,a);
+        int a0 = p[2][0], a1 = p[2][1];
+        int b0 = p[1][0], b1 = p[1][1];
+        int c0 = p[0][0], c1 = p[0][1];
+        cout<<a0<<' '<<a1<<' '<<b0<<' '<<b1<<' '<<c0<<' '<<c1<<endl;
+    }
+    else cout<< -1 <<endl;
 }
 
 int32_t main(){

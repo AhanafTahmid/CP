@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define endl '\n'
+#define int long long
+
+void solve(){
+    int a,b,n,m;cin>>a>>b>>n>>m;
+    int v1 = min(a,b) - m;
+    int v2 = (v1>=0?v1:0) + max(a,b) - n;
+    cout<< (v1>=0 && v2>=0?"Yes":"No") <<endl;
+}
+
+int32_t main(){
+    ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    int t=1;
+    cin >> t;
+    while(t--)solve(); 
+    return 0;
+}
