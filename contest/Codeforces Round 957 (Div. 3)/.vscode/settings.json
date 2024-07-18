@@ -1,0 +1,32 @@
+{
+    "files.associations": {
+        "queue": "cpp",
+        "stack": "cpp",
+        "random": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp",
+        "algorithm": "cpp",
+        "ostream": "cpp",
+        "numbers": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "*.tcc": "cpp",
+        "ios": "cpp",
+        "tuple": "cpp",
+        "__bit_reference": "cpp",
+        "bitset": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "functional": "cpp",
+        "compare": "cpp",
+        "__locale": "cpp",
+        "iostream": "cpp"
+    }
+}
