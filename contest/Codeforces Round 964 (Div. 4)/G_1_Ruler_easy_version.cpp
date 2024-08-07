@@ -7,9 +7,9 @@ void solve(){
     int l = 1, r = 1001, m;
     for(int i=0;i<7;i++){
         m = (l+r)>>1;
-        printf("? %lld %lld\n\n",m, m);
+        printf("? %lld %lld\n\n",1LL, m);
         int s;cin>>s;
-        if(m*m==s)l = m + 1;
+        if(m==s)l = m + 1;
         else r = m;
         if (l == r) {
             cout << "! " << l << endl;
