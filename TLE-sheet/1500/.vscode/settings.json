@@ -110,5 +110,8 @@
         "stop_token": "cpp",
         "syncstream": "cpp",
         "thread": "cpp"
-    }
+    },
+    "cph.general.saveLocation": "/Volumes/Files/MEDIA/bin files cph",
+    "cph.general.defaultLanguage": "cpp",
+    "cph.general.defaultLanguageTemplateFileLocation": "/Volumes/Files/Programming/1-CP/Old(Before Feb8, 2024)/sample_opening_snippet.cpp"
 }
