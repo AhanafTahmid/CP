@@ -109,7 +109,11 @@
         "spanstream": "cpp",
         "stop_token": "cpp",
         "syncstream": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "generator": "cpp",
+        "print": "cpp",
+        "stdfloat": "cpp",
+        "text_encoding": "cpp"
     },
     "cph.general.saveLocation": "/Volumes/Files/MEDIA/bin files cph",
     "cph.general.defaultLanguage": "cpp",
