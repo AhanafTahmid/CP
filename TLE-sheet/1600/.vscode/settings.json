@@ -33,6 +33,12 @@
         "generator": "cpp",
         "ranges": "cpp",
         "stacktrace": "cpp",
-        "text_encoding": "cpp"
+        "text_encoding": "cpp",
+        "barrier": "cpp",
+        "latch": "cpp",
+        "limits": "cpp",
+        "semaphore": "cpp",
+        "algorithm": "cpp",
+        "bitset": "cpp"
     }
 }
