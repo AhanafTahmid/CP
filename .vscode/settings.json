@@ -113,5 +113,6 @@
         "thread": "cpp"
     },
     "cph.general.onceMaintainerMessage": false,
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "cph.general.saveLocation": ""
 }
