@@ -7,47 +7,24 @@ void solve(){
     int n, k;cin>>n>>k;
     vector<int>a(n);
     for(int &i: a)cin>>i;
-    int l = *max_element(a.begin(),a.end()), r = 1e9, m;
+    int l = *max_element(a.begin(),a.end()), r = 1e10, m;
     int ans = l;
+    int last = 0;
     while(l+1<r){
         m = (l+r)/2;
-        //cout<< m <<endl;
         bool ok = 0;
         for(int i=0;i+1<n;i++){
-            
-            vector<int>b(n);
-            b = a;
-            int op = 0;
-            int mx = 0;
-            for(int j=i;j+1<n;j++){
-                cout<< "????";
-                int t = b[j];
-                int p = b[j];
-                if(  b[j]<=b[j+1] ){
-                    t = b[j+1] + 1;
-                }
-                //t = max(b[j+1] + 1, b[j]);
-                op+= (t - p);
-                b[j] = t;
-                mx = max(mx, b[j]);
-                for(int x: b) cout<< x << ' ';
-                cout<< op << ' ' << mx;
-                 cout<<endl;
-                if(op>k){
-                    break;
-                }
-                else if(op<=k && ans<mx){
-                    //l = t;
-                    //ans = max(t);
-                    ok = 1;
-                    break;
-                }
-                // for(int x: b) cout<< x << ' ';
-                // cout<<endl;
+            int cnt = m - a[i];
+            last = m - a[i];
+            for(int j=i+1, t = 1;j+1<n;j++,t++){
+                cnt+= max( m - t - a[j], 0LL);
+                last = max( m - t - a[j], 0LL);
+                if(last == 0) break;
             }
-            //if(ok)break;
+            if(cnt<=k && (a[n-2]+last <= a[n-1] + 1 || last==0) ) ok = 1;//check for less than k count and last element condition
+            if(ok) break;
         }
-        if(ok) l = m, ans = m;
+        if(ok) l = m;
         else r = m;
     }
 
