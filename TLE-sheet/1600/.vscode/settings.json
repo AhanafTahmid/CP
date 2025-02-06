@@ -48,6 +48,7 @@
         "ratio": "cpp",
         "compare": "cpp",
         "cstdint": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "numeric": "cpp"
     }
 }
