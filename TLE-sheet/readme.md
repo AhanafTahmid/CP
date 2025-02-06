@@ -1,1 +1,1 @@
-(https://www.tle-eliminators.com/cp-sheet)
+https://www.tle-eliminators.com/cp-sheet
