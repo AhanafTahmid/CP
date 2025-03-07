@@ -4,71 +4,40 @@ using namespace std;
 #define int long long
 
 void solve(){
-    int n,m;cin>>n>>m;
-    vector<char> v[100];
+    int n, m;cin>>n>>m;
+    vector<vector<char>>mat(n, vector<char>(m));
     for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            char ch;cin>>ch;
-            v[j].push_back(ch);
-        }
+        for(int j=0;j<m;j++)cin>>mat[i][j];
     }
 
-    vector<string> vs;
-    for(int i=0;i<m;i++){
-        string tmp = "";
+    for(int i=0;i+1<n;i++){
         for(int j=0;j<m;j++){
-            tmp += v[i][j];
-        }
-        vs.push_back(tmp);
-    }
-
-    for(int i=0;i<m;i++){
-        int j = 0;
-        for(int k=0;k<vs[i].size();k++){
-            if(vs[i][k]=='*')continue;
-            else if(vs[i][k]=='.'){
-                j = k;
-                while(k-1>=0 && vs[i][k]=='.' && vs[i][k-1]=='*'){
-                    swap(vs[i][k], vs[i][k-1]);
-                    k--;
+            int last = n, cnt = 0;
+            for(int k=i;k<n;k++){
+                if( mat[k][j] == '*') cnt++;
+                else if( mat[k][j] == 'o'){
+                    last = k;
+                    break;
                 }
-                k = j;
             }
-            else break;
+            for(int k=last-1;k>=i;k--){
+                if( cnt>0)mat[k][j] = '*',cnt--;
+                else mat[k][j] = '.';
+            }
         }
-        //cout<< vs[i] <<endl;
     }
 
-    vector<char> ans[100];
-    for(int i=0;i<m;i++){
-        //string tmp = "";
-        for(int j=0;j<m;j++){
-            cout<<vs[i][j];
-            //vs[j].push_back(vs[i][j]);
-            //tmp += v[i][j];
-            ans[i].push_back(vs[i][j]);
-        }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++)cout<<mat[i][j];
         cout<<endl;
-        //v[j].push_back(tmp);
     }
-
-    //cout<< ans[0][0] <<endl;
-    //cout<< ans.size() <<endl;
-    for(int i=0;i<m;i++){
-        for(int j=0;j<m;j++){
-            //cout<< ans[j][i];
-        }
-        //cout<<endl;
-    }
-
-    //for(auto x: vs)cout<<x<<endl;
-
+    cout<<endl;
 }
 
 int32_t main(){
     ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     int t=1;
-    //cin >> t;
+    cin >> t;
     while(t--)solve(); 
     return 0;
 }
