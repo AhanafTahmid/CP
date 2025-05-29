@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "iostream": "cpp",
-        "valarray": "cpp",
-        "ostream": "cpp",
-        "__hash_table": "cpp",
-        "unordered_map": "cpp"
-    }
-}
