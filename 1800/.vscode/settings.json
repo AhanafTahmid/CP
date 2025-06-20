@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "iostream": "cpp",
+        "compare": "cpp",
+        "cstdint": "cpp",
+        "ostream": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp"
+    }
+}
