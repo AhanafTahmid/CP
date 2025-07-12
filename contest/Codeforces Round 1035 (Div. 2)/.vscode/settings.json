@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "ios": "cpp",
+        "tuple": "cpp",
+        "random": "cpp"
+    }
+}

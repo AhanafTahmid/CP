@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "random": "cpp",
+        "regex": "cpp",
+        "span": "cpp",
+        "chrono": "cpp",
+        "__locale": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "array": "cpp",
+        "queue": "cpp",
+        "string_view": "cpp"
+    }
+}
